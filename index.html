@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form id="q1">
+        1
+        <p>Enter a phone number</p>
+        <input type="tel" id="num">
+        <button onclick="checkNumber(event)">Submit</button>
+    </form>
+<script>
+    var regex = /^\d{3}-\d{3}-\d{4}$/
+   
+    
+
+    function checkNumber(e){
+        e.preventDefault();
+        var uTel = document.getElementById('num').value
+        var teste = regex.test(uTel);
+        if(teste==false){
+           window.alert("WRONG");
+            return false
+        }else{
+            return true
+        } 
+    }
+</script>
+
+<br>
+<br>
+<br>
+<div id="q2">
+2
+    <input type="range" value="50" min="0" max="100">
+    <meter min="0" max="10" value="5"></meter>
+ 
+</div>
+<br>
+<br>
+<br>
+<div id="q3">
+    3
+    <form id="boxes">
+        <input type="number" id="b1">
+        <input type="number" id="b2">
+        <button onclick="add(event)">Submit</button>
+        <p id="answer"></p>
+    </form>
+</div>
+<script>
+    
+    
+    function add(e){
+        e.preventDefault();
+        var b1 = document.getElementById('b1').value
+        var b2 = document.getElementById('b2').value
+        console.log(b1)
+        console.log(b2)
+        var addition = parseInt(b1) + parseInt(b2)
+        console.log(addition)
+        document.getElementById('answer').innerHTML = addition
+    }
+</script>
+<br>
+<br>
+<br>
+<div>
+    <label for="flavors">Choose a Flavor</label>
+    <input list="flavors" name="flavors">
+    <datalist id="flavors">
+        <option value="Chocolate"></option>
+        <option value="Coconut"></option>
+        <option value="Mint"></option>
+        <option value="Strawberry"></option>
+        <option value="Vanilla"></option>
+    </datalist>
+    <p>Other:</p>
+    <input type="text">
+</div>
+
+
+</body>
+</html>
